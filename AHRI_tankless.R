@@ -3,7 +3,9 @@ fn_script = "AHRI_tankless.R"
 # "Mon May 15 11:52:26 2017"
 # "Mon May 15 16:40:25 2017"  fix RE.Max
 # "Mon May 15 18:54:52 2017"  matrix solution to Fadj & Lcyc_gas
-# "Tue May 16 06:05:15 2017"  1st pass at matrix solution
+# "Tue May 16 06:05:15 2017"  1st pass at matrix solution, failed
+# "Tue May 16 11:25:51 2017"  go back to for Lcyc.RE and Lcyc.UEF
+#                             Negative RE cyclic losses and Lcyc.UEF < Lcyc.RE?
 
 
 # clean up leftovers before starting
@@ -113,7 +115,7 @@ summary(DT_tankless[,list(RE,RE.Max)])
     # Mean   :0.8831   Mean   :0.8514  
     # 3rd Qu.:0.9500   3rd Qu.:0.8877  
     # Max.   :1.0000   Max.   :0.9814  
-# Seems OK
+# Seems to work. Although RE.Max is less than RE. So efficiency is not constant with flow rate
 
 # make a data.table that's just the first draw data from UEF draw pattern for the RE calcs
 DT_RE <- DT_UEF_DP[Draw==1,list(Usage.Bin, 
@@ -143,155 +145,18 @@ DT_tankless <- merge(DT_tankless, DT_UEF)
 summary(DT_tankless)
 # OK
 
-# calculate the turndown ratio at RE test procedure flowrates
-DT_tankless[,TD.RE:=Flow.RE/MaxGPM]
-# and average turndown for UEF test procedure
-DT_tankless[,TD.UEF:=Flow.UEF/MaxGPM]
+str(DT_tankless)
 
-# try matrix solution 
-# make simple variables first for the nth WH
-n=1
-DT_tankless[n,]
-Rated.Input.n    = DT_tankless[n,Rated.Input] 
-TD.UEF.n         = DT_tankless[n,TD.UEF]
-Duration.UEF.n   = DT_tankless[n,Duration.UEF]
-N.UEF.n          = DT_tankless[n,N.UEF]
-Qout.UEF.n       = DT_tankless[n,Qout.UEF]
+# calculate the cyclic losses from the RE test procedure 
+DT_tankless[,Lcyc.RE:=(Volume.RE * Tdelta * Cp)/RE - (Rated.Input/60)*Volume.RE/MaxGPM]
+summary(DT_tankless[,Lcyc.RE]) # Negative RE cyclic losses??!!
 
-TD.RE.n          = DT_tankless[n,TD.RE]  
-Duration.RE.n    = DT_tankless[n,Duration.RE]  
-N.RE.n           = DT_tankless[n,N.RE]  
-Qout.RE.n        = DT_tankless[n,Qout.RE]
+# calculate the cyclic losses from the UEF test procedure 
+DT_tankless[,Lcyc.UEF:=(Volume.UEF * Tdelta * Cp)/UEF - (Rated.Input/60)*Volume.UEF/MaxGPM]
+summary(DT_tankless[,Lcyc.UEF]) # Negative RE cyclic losses??!!
 
-# find solutions to:
-# A[1,1] * Fadj + A[1,2] * Lcyc_gas = Qout.UEF
-# A[2,1] * Fadj + A[2,2] * Lcyc_gas = Qout.RE
-
-# Matrix A, the coeficients of Fadj & Lcyc_gas
-A <- matrix(nrow=2,ncol=2)
-A[1,1] <- Rated.Input.n * TD.UEF.n * Duration.UEF.n
-A[1,2] <- N.UEF.n
-A[2,1] <- Rated.Input.n * TD.RE.n * Duration.RE.n
-A[2,2] <- N.RE.n
-A
-
-# Matrix B, the constants
-b <- matrix(nrow=2)
-b[1] <- Qout.UEF.n
-b[2] <- Qout.RE.n
-b
-
-X <- solve(A,b)
-X
-    #              [,1]
-    # [1,] 1.616453e-02
-    # [2,] 9.635467e-13
-# X[2,] too small 
-
-Fadj.n <- X[1,]
-Lcyc_gas.n <- X[2,]
-
-# check answer
-A[1,1] * Fadj.n + A[1,2] * Lcyc_gas.n
-Qout.UEF.n
-identical(A[1,1] * Fadj.n + A[1,2] * Lcyc_gas.n, Qout.UEF.n)
-#  TRUE
-
-A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n
-Qout.RE.n
-identical(A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n, Qout.RE.n)
-# FALSE
-(A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n) - Qout.RE.n
-# -1.818989e-12, 
-# not a stable solution? error is larger than Fadj?
-
-##
-
-# Try again with a more standard WH?
-names(DT_tankless)
-DT_tankless[Model.Number=="ATI-110U 200",]
-
-Rated.Input.n    = DT_tankless[Model.Number=="ATI-110U 200",Rated.Input] 
-TD.UEF.n         = DT_tankless[Model.Number=="ATI-110U 200",TD.UEF]
-Duration.UEF.n   = DT_tankless[Model.Number=="ATI-110U 200",Duration.UEF]
-N.UEF.n          = DT_tankless[Model.Number=="ATI-110U 200",N.UEF]
-Qout.UEF.n       = DT_tankless[Model.Number=="ATI-110U 200",Qout.UEF]
-
-TD.RE.n          = DT_tankless[Model.Number=="ATI-110U 200",TD.RE]  
-Duration.RE.n    = DT_tankless[Model.Number=="ATI-110U 200",Duration.RE]  
-N.RE.n           = DT_tankless[Model.Number=="ATI-110U 200",N.RE]  
-Qout.RE.n        = DT_tankless[Model.Number=="ATI-110U 200",Qout.RE]
-
-# find solutions to:
-# A[1,1] * Fadj + A[1,2] * Lcyc_gas = Qout.UEF
-# A[2,1] * Fadj + A[2,2] * Lcyc_gas = Qout.RE
-
-# Matrix A, the coeficients of Fadj & Lcyc_gas
-A <- matrix(nrow=2,ncol=2)
-A[1,1] <- Rated.Input.n * TD.UEF.n * Duration.UEF.n
-A[1,2] <- N.UEF.n
-A[2,1] <- Rated.Input.n * TD.RE.n * Duration.RE.n
-A[2,2] <- N.RE.n
-A
-
-# Matrix B, the constants
-b <- matrix(nrow=2)
-b[1] <- Qout.UEF.n
-b[2] <- Qout.RE.n
-b
-
-X <- solve(A,b)
-X
-#              [,1]
-# [1,] 1.616453e-02
-# [2,] 9.635467e-13
-# X[2,] too small 
-
-Fadj.n <- X[1,]
-Lcyc_gas.n <- X[2,]
-
-# check answer
-A[1,1] * Fadj.n + A[1,2] * Lcyc_gas.n
-Qout.UEF.n
-identical(A[1,1] * Fadj.n + A[1,2] * Lcyc_gas.n, Qout.UEF.n)
-#  TRUE
-
-A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n
-Qout.RE.n
-identical(A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n, Qout.RE.n)
-# FALSE
-(A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n) - Qout.RE.n
-# -1.818989e-12, 
-# not a stable solution? error is larger than Fadj?
-
-
-
-####
-
-
-
-
-
-
-
-# fit a model
-mod <-lm( Energy.Factor ~ Recovery.Efficiency ,data=DT_tankless)
-summary(mod)$adj.r.squared
-mod$coefficients
-mod$coefficients[[1]] # Intercept
-mod$coefficients[[2]] # RE coefficient
-mod$adj.r.squared
-nrow(DT_tankless)
-
-eqn_label <- sprintf("EF = RE * %5.4f + %6.5f, r2=%5.4f n=%d",
-                            mod$coefficients[[2]],
-                            mod$coefficients[[1]],
-                            summary(mod)$adj.r.squared,
-                            nrow(DT_tankless))
-# plot model on chart
-ggplot(data=DT_tankless,  aes(Recovery.Efficiency,  Energy.Factor)) +
-  geom_point() +
-  geom_smooth(method ="lm") + geom_text(x=.90, y=.80,label=eqn_label)
+qplot(data = DT_tankless, x=Lcyc.RE, y=Lcyc.UEF)
+# Sign wrong somewhere? Lcyc.UEF < Lcyc.RE?
 
 ggsave("tanklessEF.png")
 
