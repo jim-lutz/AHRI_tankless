@@ -1,0 +1,48 @@
+# from:  10 CFR § 430.23 Test procedures for the measurement of energy and water consumption. (e) Water Heaters.  Table III. 1-4 Usage Patterns,,,
+Usage.Bin,Draw,Volume,Flow
+High Usage,1,27.00,3.00
+High Usage,2,2.00,1.00
+High Usage,3,1.00,1.00
+High Usage,4,9.00,1.70
+High Usage,5,15.00,3.00
+High Usage,6,5.00,1.70
+High Usage,7,1.00,1.00
+High Usage,8,1.00,1.00
+High Usage,9,1.00,1.00
+High Usage,10,2.00,1.00
+High Usage,11,2.00,1.00
+High Usage,12,2.00,1.70
+High Usage,13,2.00,1.70
+High Usage,14,14.00,3.00
+Medium Usage,1,15.00,1.70
+Medium Usage,2,2.00,1.00
+Medium Usage,3,9.00,1.70
+Medium Usage,4,9.00,1.70
+Medium Usage,5,5.00,1.70
+Medium Usage,6,1.00,1.00
+Medium Usage,7,1.00,1.00
+Medium Usage,8,1.00,1.00
+Medium Usage,9,1.00,1.00
+Medium Usage,10,2.00,1.00
+Medium Usage,11,2.00,1.70
+Medium Usage,12,7.00,1.70
+Low Usage,1,15.00,1.70
+Low Usage,2,2.00,1.00
+Low Usage,3,1.00,1.00
+Low Usage,4,6.00,1.70
+Low Usage,5,4.00,1.70
+Low Usage,6,1.00,1.00
+Low Usage,7,1.00,1.00
+Low Usage,8,1.00,1.00
+Low Usage,9,2.00,1.00
+Low Usage,10,2.00,1.70
+Low Usage,11,3.00,1.70
+Very Small Usage,1,2.00,1.00
+Very Small Usage,2,1.00,1.00
+Very Small Usage,3,0.50,1.00
+Very Small Usage,4,0.50,1.00
+Very Small Usage,5,0.50,1.00
+Very Small Usage,6,1.00,1.00
+Very Small Usage,7,2.00,1.00
+Very Small Usage,8,1.50,1.00
+Very Small Usage,9,1.00,1.00

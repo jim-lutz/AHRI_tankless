@@ -1,0 +1,281 @@
+# The Department of Energy (DOE) test procedure has been changed significantly. As a result, Energy Factor (EF) ratings are being replaced with Uniform Energy Factor (UEF) ratings. Currently this directory lists only models that were available before July 13, 2015, and their EF ratings.
+# Models that have been introduced to the market on or after July 13, 2015 are required to use the revised test procedure and have a UEF rating. Those new models are viewable on a separate page here .
+# Process an AHRI Residential Water Heater directory file
+# https://www.ahridirectory.org/ahridirectory/pages/rwh/RWHDirectory.pdf
+# downloaded 2017-05-11 08:47:38
+AHRI Reference Number,Model Status,Trade/Brand Name,Manufacturer,Model Number,Energy Source,Heater Type,Usage Bin,First Hour Rating,MaxGPM,Uniform Energy  Factor,Nominal  Capacity (gal),Rated Storage Volume,Input (MBtuh/kW),Recovery Efficiency (%),Sold In
+9141037,Active,HTP,"HTP, INC.",RTP-199,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.9,0.94,1,1,199,96,USA; Canada
+8561760,Active,HTP,"HTP, INC.",RTC-199,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.8,0.93,0,2,199,96,USA; Canada
+8579054,Active,HTP,"HTP, INC.",RTCO-199,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.8,0.93,0,2,199,96,USA; Canada
+8561845,Active,WESTINGHOUSE,"HTP, INC.",WGRTCNG199,Natural Gas,Instantaneous,High Usage,,5.8,0.93,0,2,199,96,USA; Canada
+8581431,Active,WESTINGHOUSE,"HTP, INC.",WGRTCONG199,Natural Gas,Instantaneous,High Usage,,5.8,0.93,0,2,199,96,USA; Canada
+8561846,Active,WESTINGHOUSE,"HTP, INC.",WGRTCLP199,Propane Gas,Instantaneous,High Usage,,5.8,0.93,0,2,199,96,USA; Canada
+8581432,Active,WESTINGHOUSE,"HTP, INC.",WGRTCOLP199,Propane Gas,Instantaneous,High Usage,,5.8,0.93,0,2,199,96,USA; Canada
+10239153,Active,NORITZ,NORITZ AMERICA CORPORATION,GQ-C3259WX-FF US,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.8,0.96,0,1,199.9,99,USA; Canada
+8868718,Active,NORITZ,NORITZ AMERICA CORPORATION,GQ-C3257WX-FF US,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.7,0.9,0,1,199.9,94,USA
+8868719,Active,NORITZ,NORITZ AMERICA CORPORATION,GQ-C3257WX US,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.7,0.91,0,1,199.9,96,USA
+9963064,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T9800 SE 199,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.4,0.96,0,1,199,100,USA; Canada
+9963071,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T9800 SEC 199,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.4,0.96,0,1,199,100,USA; Canada
+9963072,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T9800 SECO 199,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.4,0.96,0,1,199,100,USA; Canada
+9963069,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T9800 SEO 199,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.4,0.96,0,1,199,100,USA; Canada
+9963070,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T9900 SE 199,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.4,0.96,0,1,199,100,USA; Canada
+9963073,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T9900I SE 199,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.4,0.96,0,1,199,100,USA; Canada
+10239154,Active,NORITZ,NORITZ AMERICA CORPORATION,GQ-C2859WX-FF US,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.3,0.96,0,1,180,99,USA; Canada
+8868712,Active,NORITZ,NORITZ AMERICA CORPORATION,GQ-2857WX US,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.2,0.81,0,1,199.9,85,USA
+8868715,Active,NORITZ,NORITZ AMERICA CORPORATION,GQ-2857WX-F US,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.2,0.8,0,1,199.9,84,USA
+8868717,Active,NORITZ,NORITZ AMERICA CORPORATION,GQ-C2857WS US,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.2,0.92,0,1,180,96,USA
+10021153,Active,HTP,"HTP, INC.",RTP-180,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.2,0.94,0,1,180,96,USA; Canada
+8868711,Active,NORITZ,NORITZ AMERICA CORPORATION,GQ-2857WX-FFA US,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.1,0.8,0,1,199.9,85,USA
+8868716,Active,NORITZ,NORITZ AMERICA CORPORATION,GQ-C2857WS-FF US,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,5.1,0.9,0,1,180,94,USA
+9857525,Active,MARQUIS;TRIANGLE TUBE,TRIANGLE TUBE PHASE III INC.,TWH180,Natural Gas,Instantaneous,High Usage,,5.1,0.94,0,1,180,98,USA; Canada
+9857526,Active,MARQUIS;TRIANGLE TUBE,TRIANGLE TUBE PHASE III INC.,TWH180LP,Propane Gas,Instantaneous,High Usage,,5.1,0.94,0,1,180,98,USA; Canada
+9008279,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,ATO-510U 200,Natural Gas,Instantaneous,High Usage,,5,0.81,0,1,199,84,USA
+9008277,Active,AMERICAN,A.O. SMITH WATER PRODUCTS CO.,GT-510U-E 200,Natural Gas,Instantaneous,High Usage,,5,0.81,0,1,199,84,USA
+9008273,Active,AMERICAN,A.O. SMITH WATER PRODUCTS CO.,GT-510U-I 200,Natural Gas,Instantaneous,High Usage,,5,0.82,0,1,199,84,USA
+9008278,Active,RELIANCE,A.O. SMITH WATER PRODUCTS CO.,TS-510U-E 200,Natural Gas,Instantaneous,High Usage,,5,0.81,0,1,199,84,USA
+9008274,Active,RELIANCE,A.O. SMITH WATER PRODUCTS CO.,TS-510U-I 200,Natural Gas,Instantaneous,High Usage,,5,0.82,0,1,199,84,USA
+9008276,Active,STATE,A.O. SMITH WATER PRODUCTS CO.,GTS-510U-E 200,Natural Gas,Instantaneous,High Usage,,5,0.81,0,1,199,84,USA
+9008272,Active,STATE,A.O. SMITH WATER PRODUCTS CO.,GTS-510U-I 200,Natural Gas,Instantaneous,High Usage,,5,0.82,0,1,199,84,USA
+9007179,Active,TAKAGI,A.O. SMITH WATER PRODUCTS CO.,TK-510U-E 200,Natural Gas,Instantaneous,High Usage,,5,0.81,0,1,199,84,USA
+9007176,Active,TAKAGI,A.O. SMITH WATER PRODUCTS CO.,TK-510U-I 200,Natural Gas,Instantaneous,High Usage,,5,0.82,0,1,199,84,USA
+9970144,Active,LOCHINVAR,"LOCHINVAR, LLC",LTI-510U,Natural Gas,Instantaneous,High Usage,,5,0.82,0,1,199,84,USA
+9970164,Active,LOCHINVAR,"LOCHINVAR, LLC",LTO-510U,Natural Gas,Instantaneous,High Usage,,5,0.81,0,1,199,84,USA
+9008284,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,GTU-510-I 200,Natural Gas,Instantaneous,High Usage,,5,0.82,0,1,199,84,USA
+9008285,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,GTU-510U-E 200,Natural Gas,Instantaneous,High Usage,,5,0.81,0,1,199,84,USA
+8703520,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,ATI-510C-N,Natural Gas,Instantaneous,High Usage,,4.9,0.81,1,1,199,84,USA
+8703522,Active,AMERICAN,A.O. SMITH WATER PRODUCTS CO.,GT-510C-NI,Natural Gas,Instantaneous,High Usage,,4.9,0.81,1,1,199,84,USA
+8703523,Active,RELIANCE,A.O. SMITH WATER PRODUCTS CO.,TS-510C-NI,Natural Gas,Instantaneous,High Usage,,4.9,0.81,1,1,199,84,USA
+8703521,Active,STATE,A.O. SMITH WATER PRODUCTS CO.,GTS-510C-NI,Natural Gas,Instantaneous,High Usage,,4.9,0.81,1,1,199,84,USA
+8703519,Active,TAKAGI,A.O. SMITH WATER PRODUCTS CO.,TK-510C-NI,Natural Gas,Instantaneous,High Usage,,4.9,0.81,1,1,199,84,USA
+9969156,Active,LOCHINVAR,"LOCHINVAR, LLC",LTI-510C,Natural Gas,Instantaneous,High Usage,,4.9,0.81,1,1,199,84,USA
+8746424,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,GTU-510C-NI,Natural Gas,Instantaneous,High Usage,,4.9,0.81,1,1,199,84,USA
+9008271,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,ATO-310U 200,Natural Gas,Instantaneous,High Usage,,4.8,0.82,0,1,190,85,USA
+9008269,Active,AMERICAN,A.O. SMITH WATER PRODUCTS CO.,GT-310U-E 200,Natural Gas,Instantaneous,High Usage,,4.8,0.82,0,1,190,85,USA
+9008270,Active,RELIANCE,A.O. SMITH WATER PRODUCTS CO.,TS-310U-E 200,Natural Gas,Instantaneous,High Usage,,4.8,0.82,0,1,190,85,USA
+9008268,Active,STATE,A.O. SMITH WATER PRODUCTS CO.,GTS-310U-E 200,Natural Gas,Instantaneous,High Usage,,4.8,0.82,0,1,190,85,USA
+9007178,Active,TAKAGI,A.O. SMITH WATER PRODUCTS CO.,TK-310U-E 200,Natural Gas,Instantaneous,High Usage,,4.8,0.82,0,1,190,85,USA
+9970059,Active,LOCHINVAR,"LOCHINVAR, LLC",LTO-310U,Natural Gas,Instantaneous,High Usage,,4.8,0.82,0,1,190,85,USA
+9008283,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,GTU-310U-E 200,Natural Gas,Instantaneous,High Usage,,4.8,0.82,0,1,190,85,USA
+8703515,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,ATI-310C-N,Natural Gas,Instantaneous,High Usage,,4.7,0.82,1,1,190,85,USA
+9008267,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,ATI-310U 200,Natural Gas,Instantaneous,High Usage,,4.7,0.82,0,1,190,84,USA
+8703516,Active,AMERICAN,A.O. SMITH WATER PRODUCTS CO.,GT-310C-NI,Natural Gas,Instantaneous,High Usage,,4.7,0.82,1,1,190,85,USA
+9008265,Active,AMERICAN,A.O. SMITH WATER PRODUCTS CO.,GT-310U-I 200,Natural Gas,Instantaneous,High Usage,,4.7,0.82,0,1,190,84,USA
+8703518,Active,RELIANCE,A.O. SMITH WATER PRODUCTS CO.,TS-310C-GI,Natural Gas,Instantaneous,High Usage,,4.7,0.82,1,1,190,85,USA
+9008266,Active,RELIANCE,A.O. SMITH WATER PRODUCTS CO.,TS-310U-I 200,Natural Gas,Instantaneous,High Usage,,4.7,0.82,0,1,190,84,USA
+8703517,Active,STATE,A.O. SMITH WATER PRODUCTS CO.,GTS-310C-NI,Natural Gas,Instantaneous,High Usage,,4.7,0.82,1,1,190,85,USA
+9008264,Active,STATE,A.O. SMITH WATER PRODUCTS CO.,GTS-310U-I 200,Natural Gas,Instantaneous,High Usage,,4.7,0.82,0,1,190,84,USA
+8703514,Active,TAKAGI,A.O. SMITH WATER PRODUCTS CO.,TK-310C-NI,Natural Gas,Instantaneous,High Usage,,4.7,0.82,1,1,190,85,USA
+9007175,Active,TAKAGI,A.O. SMITH WATER PRODUCTS CO.,TK-310U-I 200,Natural Gas,Instantaneous,High Usage,,4.7,0.82,0,1,190,84,USA
+9969111,Active,LOCHINVAR,"LOCHINVAR, LLC",LTI-310C,Natural Gas,Instantaneous,High Usage,,4.7,0.82,1,1,190,85,USA
+9970092,Active,LOCHINVAR,"LOCHINVAR, LLC",LTI-310U,Natural Gas,Instantaneous,High Usage,,4.7,0.82,0,1,190,84,USA
+8746423,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,GTU-310C-NI,Natural Gas,Instantaneous,High Usage,,4.7,0.82,1,1,190,85,USA
+9008282,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,GTU-310U-I 200,Natural Gas,Instantaneous,High Usage,,4.7,0.82,0,1,190,84,USA
+9963061,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T9800 SE 160,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,4.7,0.97,0,1,160,100,USA; Canada
+9963062,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T9800 SEO 160,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,4.7,0.97,0,1,160,100,USA; Canada
+9963063,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T9900 SE 160,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,4.7,0.97,0,1,160,100,USA; Canada
+8868349,Active,NORITZ,NORITZ AMERICA CORPORATION,GQ-2457WS-FFA US,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,4.5,0.8,0,1,180,83,USA
+10102537,Active,HTP,"HTP, INC.",RT-150,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,4.5,0.93,1,1,150,95,USA; Canada
+10147094,Active,HTP,"HTP, INC.",RTO-150,Both Natural Gas and Propane Gas,Instantaneous,High Usage,,4.5,0.93,1,1,150,95,USA; Canada
+8552533,Active,RAYPAK,"RHEEM SALES COMPANY, INC.",NH-208XLP-1,Propane Gas,Instantaneous,High Usage,,4.3,0.82,20,20,199.9,83,USA
+10147090,Active,WESTINGHOUSE,"HTP, INC.",WGRTNG150,Natural Gas,Instantaneous,Medium Usage,,3.8,0.93,1,1,150,95,USA; Canada
+10147093,Active,WESTINGHOUSE,"HTP, INC.",WGRTONG150,Natural Gas,Instantaneous,Medium Usage,,3.8,0.93,1,1,150,95,USA; Canada
+10147091,Active,WESTINGHOUSE,"HTP, INC.",WGRTLP150,Propane Gas,Instantaneous,Medium Usage,,3.8,0.93,1,1,150,95,USA; Canada
+10147092,Active,WESTINGHOUSE,"HTP, INC.",WGRTOLP150,Propane Gas,Instantaneous,Medium Usage,,3.8,0.93,1,1,150,95,USA; Canada
+9007180,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,ATI-110U 200,Natural Gas,Instantaneous,Medium Usage,,3.6,0.81,0,1,140,85,USA
+9007182,Active,AMERICAN,A.O. SMITH WATER PRODUCTS CO.,GT-110U-I-200,Natural Gas,Instantaneous,Medium Usage,,3.6,0.81,0,1,140,85,USA
+9007183,Active,RELIANCE,A.O. SMITH WATER PRODUCTS CO.,TS-110U-I 200,Natural Gas,Instantaneous,Medium Usage,,3.6,0.81,0,1,140,85,USA
+9007186,Active,STATE,A.O. SMITH WATER PRODUCTS CO.,GTS-110U-I 200,Natural Gas,Instantaneous,Medium Usage,,3.6,0.81,0,1,140,85,USA
+9007174,Active,TAKAGI,A.O. SMITH WATER PRODUCTS CO.,TK-110U-I 200,Natural Gas,Instantaneous,Medium Usage,,3.6,0.81,0,1,140,85,USA
+9969036,Active,LOCHINVAR,"LOCHINVAR, LLC",LTI-110C,Natural Gas,Instantaneous,Medium Usage,,3.6,0.8,1,1,140,82,USA
+9969908,Active,LOCHINVAR,"LOCHINVAR, LLC",LTI-110U,Natural Gas,Instantaneous,Medium Usage,,3.6,0.81,0,1,140,85,USA
+8746422,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,GTU-110C-NI,Natural Gas,Instantaneous,Medium Usage,,3.6,0.8,1,1,140,82,USA
+9008280,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,GTU-110U-I 200,Natural Gas,Instantaneous,Medium Usage,,3.6,0.81,0,1,140,85,USA
+9008262,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,ATO-110U 200,Natural Gas,Instantaneous,Medium Usage,,3.5,0.81,0,1,140,83,USA
+9008260,Active,AMERICAN,A.O. SMITH WATER PRODUCTS CO.,GT-110U-E 200,Natural Gas,Instantaneous,Medium Usage,,3.5,0.81,0,1,140,83,USA
+9008261,Active,RELIANCE,A.O. SMITH WATER PRODUCTS CO.,TS-110U-E 200,Natural Gas,Instantaneous,Medium Usage,,3.5,0.81,0,1,140,83,USA
+9008259,Active,STATE,A.O. SMITH WATER PRODUCTS CO.,GTS-110U-E 200,Natural Gas,Instantaneous,Medium Usage,,3.5,0.81,0,1,140,83,USA
+9007177,Active,TAKAGI,A.O. SMITH WATER PRODUCTS CO.,TK-110U-E 200,Natural Gas,Instantaneous,Medium Usage,,3.5,0.81,0,1,140,83,USA
+9970009,Active,LOCHINVAR,"LOCHINVAR, LLC",LTO-110U,Natural Gas,Instantaneous,Medium Usage,,3.5,0.81,0,1,140,83,USA
+9008281,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,GTU-110U-E 200,Natural Gas,Instantaneous,Medium Usage,,3.5,0.81,0,1,140,83,USA
+9850203,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T4600 S 103 NG,Natural Gas,Instantaneous,Low Usage,,2.5,0.82,0,1,103.2,84,USA; Canada
+9850205,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T4600 SO 103 NG,Natural Gas,Instantaneous,Low Usage,,2.5,0.82,0,1,103.2,84,USA; Canada
+9850204,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T4600 S 103 LP,Propane Gas,Instantaneous,Low Usage,,2.5,0.82,0,1,103.2,84,USA; Canada
+9850206,Active,BOSCH,BOSCH THERMOTECHNOLOGY CORP,T4600 SO 103 LP,Propane Gas,Instantaneous,Low Usage,,2.5,0.82,0,1,103.2,84,USA; Canada
+8395062,Active,EEMAX,EEMAX INC.,EX3012,Electric Resistance,Instantaneous,Very Small Usage,,0.2,0.98,1,20,3,98,USA
+10071906,Active,HHP,HHP,HHP30120B,Electric Resistance,Instantaneous,Very Small Usage,,0.2,0.98,1,20,3,98,USA
+8377556,Active,EEMAX,EEMAX INC.,EX2412,Electric Resistance,Instantaneous,Very Small Usage,,0.2,0.98,0,1,2.4,98,USA; Canada
+10071896,Active,HHP,HHP,HHP24120B,Electric Resistance,Instantaneous,Very Small Usage,,0.2,0.98,0,1,2.4,98,USA; Canada
+8395061,Active,EEMAX,EEMAX INC.,EX3512,Electric Resistance,Instantaneous,Very Small Usage,,0.1,0.98,1,1,3.5,98,USA; Canada
+10071897,Active,HHP,HHP,HHP35120B,Electric Resistance,Instantaneous,Very Small Usage,,0.1,0.98,1,1,3.5,98,USA; Canada
+10103209,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,FCG 100* 400,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103210,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,FCG 100* 401,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103211,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,PCG 100* 400,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103219,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,PCG 100* 401,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103218,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,G122-100T77-4NOV* 400,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103217,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,G62-100T77-4NOV* 400,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103225,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,G62-100T77-4PV* 401,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103214,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6 100 XRRT* 400,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103215,Active,LOCHINVAR,"LOCHINVAR, LLC",LTN10075 400,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103216,Active,LOCHINVAR,"LOCHINVAR, LLC",XTN10075 400,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103222,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6 100 CRRT* 401,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103223,Active,LOCHINVAR,"LOCHINVAR, LLC",LTL10075 401,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103224,Active,LOCHINVAR,"LOCHINVAR, LLC",XTL10075 401,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103212,Active,STATE,STATE WATER HEATERS,GS6 100 XRRT* 400,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103213,Active,STATE,STATE WATER HEATERS,GSX 100 XRRT* 400,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103220,Active,STATE,STATE WATER HEATERS,GS6 100 CRRT* 401,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10103221,Active,STATE,STATE WATER HEATERS,GSX 100 CRRT* 401,Natural Gas,Storage,High Usage,170,,0.58,98,95,75.1,79,USA
+10201256,Active,HTP,"HTP, INC.",RGH20-75F,Natural Gas,Storage,High Usage,127,,0.88,20,20,75,98,USA; Canada
+10203420,Active,WESTINGHOUSE,"HTP, INC.",WGRGH20NG75F,Natural Gas,Storage,High Usage,127,,0.88,20,20,75,98,USA; Canada
+10103163,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,FCG 75* 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103164,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,PCG 75* 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103169,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,G102-75T75-4NOV* 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103171,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,G122-75T75-4PV* 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103170,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,G62-75T75-4NOV* 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103167,Active,LOCHINVAR,"LOCHINVAR, LLC",LTN07575* 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103168,Active,LOCHINVAR,"LOCHINVAR, LLC",XTN07575* 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103173,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6 75 XRRS* 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103188,Active,KENMORE,SEARS BRANDS MANAGEMENT CORPORATION,153.331763,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103165,Active,STATE,STATE WATER HEATERS,GS6 75 XRRS* 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103166,Active,STATE,STATE WATER HEATERS,GSX 75 XRRS* 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103175,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,G2F7575T4NOV 400,Natural Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10232681,Active,BOCK,BOCK WATER HEATERS INC.,32 E,Oil,Storage,High Usage,125,,0.64,32,30,104,78,USA
+10103176,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,FCG 75* 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103177,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,PCG 75* 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103184,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,G102-75T75-4PV* 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103185,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,G112-75T75-4PV* 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103186,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,G62-75T75-4PV* 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103187,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,G62-75T77-PVLAT 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103180,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6 75 CRRS* 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103181,Active,LOCHINVAR,"LOCHINVAR, LLC",LTL07575* 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103182,Active,LOCHINVAR,"LOCHINVAR, LLC",XTL07575* 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103178,Active,STATE,STATE WATER HEATERS,GS6 75 CRRS* 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103179,Active,STATE,STATE WATER HEATERS,GSX 75 CRRS* 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+10103183,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,G2F7575T4PV 401,Propane Gas,Storage,High Usage,125,,0.6,74,71,75.1,74,USA
+9989647,Active,HTP,"HTP, INC.",EVG115******,Electric Resistance - Grid-enabled,Storage,High Usage,101,,0.9,111,111,4.5,98,USA; Canada
+10021155,Active,WESTINGHOUSE,"HTP, INC.",WEG115******,Electric Resistance - Grid-enabled,Storage,High Usage,101,,0.9,111,111,4.5,98,USA; Canada
+9952302,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XE80T10HD50U0,Heat Pump with Tank,Storage,High Usage,89,,3.8,80,72,5,424,USA
+9952303,Active,RICHMOND,"RHEEM SALES COMPANY, INC.",10E80-HP4D,Heat Pump with Tank,Storage,High Usage,89,,3.8,80,72,5,424,USA
+9952304,Active,RUUD,"RHEEM SALES COMPANY, INC.",PROUH80 T2 RU350 D,Heat Pump with Tank,Storage,High Usage,89,,3.8,80,72,5,424,USA
+9952301,Active,RHEEM,"RHEEM SALES COMPANY, INC.",PROPH80 T2 RH350 D,Heat Pump with Tank,Storage,High Usage,89,,3.8,80,72,5,424,USA; Canada
+10064027,Active,WESTINGHOUSE,"HTP, INC.",WEG100******,Electric Resistance - Grid-enabled,Storage,High Usage,86,,0.93,100,96,4.5,98,USA
+10082529,Active,RHEEM,"RHEEM SALES COMPANY, INC.",PROG50-38U RH60 EC1,Natural Gas,Storage,High Usage,86,,0.63,50,48,38,83,USA
+10082530,Active,RHEEM,"RHEEM SALES COMPANY, INC.",24X50FN1,Natural Gas,Storage,High Usage,86,,0.63,50,48,38,83,USA
+10082531,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XG50T06EN38U0,Natural Gas,Storage,High Usage,86,,0.63,50,48,38,83,USA
+10082532,Active,RICHMOND,"RHEEM SALES COMPANY, INC.",12G50-38FN4,Natural Gas,Storage,High Usage,86,,0.63,50,48,38,83,USA
+10082533,Active,RICHMOND,"RHEEM SALES COMPANY, INC.",6G50-38FN4,Natural Gas,Storage,High Usage,86,,0.63,50,48,38,83,USA
+10082534,Active,RICHMOND,"RHEEM SALES COMPANY, INC.",9G50-38FN4,Natural Gas,Storage,High Usage,86,,0.63,50,48,38,83,USA
+10082535,Active,RUUD,"RHEEM SALES COMPANY, INC.",M4-50FN1,Natural Gas,Storage,High Usage,86,,0.63,50,48,38,83,USA
+10082536,Active,RUUD,"RHEEM SALES COMPANY, INC.",PROG50-38U RU60 EC1,Natural Gas,Storage,High Usage,86,,0.63,50,48,38,83,USA
+9965482,Active,HTP,"HTP, INC.",EVG080******,Electric Resistance - Grid-enabled,Storage,High Usage,86,,0.93,80,78,4.5,98,USA; Canada
+10027657,Active,HTP,"HTP, INC.",EVG-100******,Electric Resistance - Grid-enabled,Storage,High Usage,86,,0.93,100,96,4.5,98,USA; Canada
+10021154,Active,WESTINGHOUSE,"HTP, INC.",WEG080******,Electric Resistance - Grid-enabled,Storage,High Usage,86,,0.93,80,78,4.5,98,USA; Canada
+10082537,Active,RHEEM,"RHEEM SALES COMPANY, INC.",PROG50-38U RH62 EC1,Natural Gas,Storage,High Usage,84,,0.64,50,48,38,79,USA
+10082538,Active,RHEEM,"RHEEM SALES COMPANY, INC.",PRO+G50-38U RH62 EC1,Natural Gas,Storage,High Usage,84,,0.64,50,48,38,79,USA
+10082539,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XG50T12HN38U1,Natural Gas,Storage,High Usage,84,,0.64,50,48,38,79,USA
+10082540,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XG50T09HN38U1,Natural Gas,Storage,High Usage,84,,0.64,50,48,38,79,USA
+10082541,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XG50T06HN38U1,Natural Gas,Storage,High Usage,84,,0.64,50,48,38,79,USA
+10082542,Active,RUUD,"RHEEM SALES COMPANY, INC.",PRO+G50-38U RU62 EC1,Natural Gas,Storage,High Usage,84,,0.64,50,48,38,79,USA
+10082543,Active,RUUD,"RHEEM SALES COMPANY, INC.",PROG50-38U RU62 EC1,Natural Gas,Storage,High Usage,84,,0.64,50,48,38,79,USA
+9959478,Active,MARATHON,"RHEEM SALES COMPANY, INC.",MRG105245,Electric Resistance - Grid-enabled,Storage,High Usage,83,,0.9,100,101,4.5,98,USA
+9959479,Active,MARATHON,"RHEEM SALES COMPANY, INC.",MRG105238,Electric Resistance - Grid-enabled,Storage,High Usage,83,,0.9,100,101,3.8,98,USA
+10068231,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,G12-UFDT5040NV 100,Natural Gas,Storage,High Usage,82,,0.69,50,48,40,73,USA
+9989879,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,GUF 50 100,Natural Gas,Storage,High Usage,82,,0.69,50,48,40,73,USA
+9989881,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,GUF62 50T40 100,Natural Gas,Storage,High Usage,82,,0.69,50,48,40,73,USA
+9989882,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6 50 UNBFT* 100,Natural Gas,Storage,High Usage,82,,0.69,50,48,40,73,USA
+9989884,Active,KENMORE,SEARS BRANDS MANAGEMENT CORPORATION,153.55651,Natural Gas,Storage,High Usage,82,,0.69,50,48,40,73,USA
+9989880,Active,STATE,STATE WATER HEATERS,GS6 50 BFUT* 100,Natural Gas,Storage,High Usage,82,,0.69,50,48,40,73,USA
+9989883,Active,WHIRLPOOL,U.S. CRAFTSMASTER,50T12-40UDNG 100,Natural Gas,Storage,High Usage,82,,0.69,50,48,40,73,USA
+9963146,Active,BRADFORD WHITE,BRADFORD WHITE CORP.,URG2D50S*N,Natural Gas,Storage,High Usage,76,,0.67,50,48,40,78,USA
+9952298,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XE65T10HD50U0,Heat Pump with Tank,Storage,High Usage,75,,3.8,65,59,5,420,USA
+9952299,Active,RICHMOND,"RHEEM SALES COMPANY, INC.",10E65-HP4D,Heat Pump with Tank,Storage,High Usage,75,,3.8,65,59,5,420,USA
+9952300,Active,RUUD,"RHEEM SALES COMPANY, INC.",PROUH65 T2 RU350 D,Heat Pump with Tank,Storage,High Usage,75,,3.8,65,59,5,420,USA
+9084786,Active,BRADFORD WHITE;JETGLAS,BRADFORD WHITE CORP.,RG2PV50S*N,Natural Gas,Storage,High Usage,75,,0.7,50,48,40,78,USA; Canada
+9084787,Active,BRADFORD WHITE;JETGLAS,BRADFORD WHITE CORP.,RG2PV50S*X,Propane Gas,Storage,High Usage,75,,0.7,50,48,40,78,USA; Canada
+9952297,Active,RHEEM,"RHEEM SALES COMPANY, INC.",PROPH65 T2 RH350 D,Heat Pump with Tank,Storage,High Usage,75,,3.8,65,59,5,420,USA; Canada
+10091902,Active,RHEEM,"RHEEM SALES COMPANY, INC.",PROG40-38U RH62 EC1,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091903,Active,RHEEM,"RHEEM SALES COMPANY, INC.",24X40FN1,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091904,Active,RHEEM,"RHEEM SALES COMPANY, INC.",PRO+G40-38U RH62 EC1,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091905,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XG40T12EN38U0,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091906,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XG40T09EN38U0,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091907,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XG40T06EN38U0,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091908,Active,RICHMOND,"RHEEM SALES COMPANY, INC.",9G40-38FN4,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091909,Active,RICHMOND,"RHEEM SALES COMPANY, INC.",12G40-38FN4,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091910,Active,RICHMOND,"RHEEM SALES COMPANY, INC.",6G40-38FN4,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091911,Active,RUUD,"RHEEM SALES COMPANY, INC.",PRO+G40-38U RU62 EC1,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091912,Active,RUUD,"RHEEM SALES COMPANY, INC.",M4-40FN1,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091913,Active,RUUD,"RHEEM SALES COMPANY, INC.",PROG40-38U RU62 EC1,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+10091914,Active,SURE COMFORT,"RHEEM SALES COMPANY, INC.",SCG40T03UN38U0,Natural Gas,Storage,Medium Usage,71,,0.58,40,38,38,76,USA
+9084785,Active,BRADFORD WHITE;JETGLAS,BRADFORD WHITE CORP.,RG2PV40S*N,Natural Gas,Storage,Medium Usage,70,,0.67,40,38,40,77,USA; Canada
+9084788,Active,BRADFORD WHITE;JETGLAS,BRADFORD WHITE CORP.,RG2PV40S*X,Propane Gas,Storage,Medium Usage,70,,0.7,40,38,40,77,USA; Canada
+9952294,Active,RICHMOND,"RHEEM SALES COMPANY, INC.",10E50-HP4D,Heat Pump with Tank,Storage,Medium Usage,67,,3.6,50,45,5,436,USA
+9952295,Active,RUUD,"RHEEM SALES COMPANY, INC.",PROUH50 T2 RU350 D,Heat Pump with Tank,Storage,Medium Usage,67,,3.6,50,45,5,436,USA
+9952296,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XE50T10HD50U0,Heat Pump with Tank,Storage,Medium Usage,67,,3.6,50,45,5,436,USA
+10068230,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,G12-UFDT4040NV 100,Natural Gas,Storage,Medium Usage,67,,0.65,40,38,40,73,USA
+9989873,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,GUF 40 100,Natural Gas,Storage,Medium Usage,67,,0.65,40,38,40,73,USA
+9989875,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,GUF62 40T40 100,Natural Gas,Storage,Medium Usage,67,,0.65,40,38,40,73,USA
+9989876,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6 40 UNBFT* 100,Natural Gas,Storage,Medium Usage,67,,0.65,40,38,40,73,USA
+9989878,Active,KENMORE,SEARS BRANDS MANAGEMENT CORPORATION,153.55641,Natural Gas,Storage,Medium Usage,67,,0.65,40,38,40,73,USA
+9989874,Active,STATE,STATE WATER HEATERS,GS6 40 BFUT* 100,Natural Gas,Storage,Medium Usage,67,,0.65,40,38,40,73,USA
+9989877,Active,WHIRLPOOL,U.S. CRAFTSMASTER,40T12-40UDNG 100,Natural Gas,Storage,Medium Usage,67,,0.65,40,38,40,73,USA
+9755531,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,MHDV62 50T40 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,67,,0.59,50,47,40,77,USA; Canada
+9755529,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6 50 MDV* 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,67,,0.59,50,47,40,77,USA; Canada
+9755530,Active,LOCHINVAR,"LOCHINVAR, LLC",MGN050 40 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,67,,0.59,50,47,40,77,USA; Canada
+9755526,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,FMDV 50 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,67,,0.59,50,47,40,77,USA; Canada
+9755527,Active,STATE,STATE WATER HEATERS,GS6 50 MDV* 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,67,,0.59,50,47,40,77,USA; Canada
+9755528,Active,STATE,STATE WATER HEATERS,SCI 50 MDV* 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,67,,0.59,50,47,40,77,USA; Canada
+9952290,Active,RHEEM,"RHEEM SALES COMPANY, INC.",PROPH50 T2 RH350 D,Heat Pump with Tank,Storage,Medium Usage,67,,3.6,50,45,5,436,USA; Canada
+8935520,Active,AMERICAN STANDARD,CALENTADORES DE AMERICA SA DE CV,HPWH50G-AS,Heat Pump with Tank,Storage,Medium Usage,66,,2.8,50,49,4.5,100,USA
+8735944,Active,MDV;MIDEA,"GD MIDEA HEATING & VENTILATING EQUIPMENT CO., LTD.",RSJ-15/190RDN3-D,Heat Pump with Tank,Storage,Medium Usage,66,,2.8,50,49,4.5,100,USA
+9956578,Active,HTP,"HTP, INC.",HPWH50H,Heat Pump with Tank,Storage,Medium Usage,66,,2.8,50,49,4.5,100,USA
+10146839,Active,WESTINGHOUSE,"HTP, INC.",HPWH50W,Heat Pump with Tank,Storage,Medium Usage,66,,2.8,50,49,4.5,100,USA
+10264953,Active,GIANT,"GIANT FACTORIES, INC.",HPWH50G,Heat Pump with Tank,Storage,Medium Usage,66,,2.8,50,49,4.5,100,USA
+9963145,Active,BRADFORD WHITE,BRADFORD WHITE CORP.,URG2D40S*N,Natural Gas,Storage,Medium Usage,62,,0.66,40,38,38,78,USA
+9034139,Active,BRADFORD WHITE,BRADFORD WHITE CORP.,RE250L*-****,Electric Resistance,Storage,Medium Usage,61,,0.93,47,43,4.5,98,USA; Canada
+8735964,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,"(E,P)NLB-50",Electric Resistance,Storage,Medium Usage,60,,0.93,48,45,4.5,98,USA
+10205589,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,E6-50L45DVB****,Electric Resistance,Storage,Medium Usage,60,,0.93,48,45,4.5,98,USA
+8736004,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,"E(6,10)N-50LB***",Electric Resistance,Storage,Medium Usage,60,,0.93,48,45,4.5,98,USA
+8736007,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6-50-EOLBS***,Electric Resistance,Storage,Medium Usage,60,,0.93,48,45,4.5,98,USA
+8736008,Active,LOCHINVAR,"LOCHINVAR, LLC",KSA050KDB***,Electric Resistance,Storage,Medium Usage,60,,0.93,48,45,4.5,98,USA
+8736002,Active,STATE,STATE WATER HEATERS,EN6-50-DOLBS***,Electric Resistance,Storage,Medium Usage,60,,0.93,48,45,4.5,98,USA
+8736003,Active,STATE,STATE WATER HEATERS,ESX-50-DOLBS***,Electric Resistance,Storage,Medium Usage,60,,0.93,48,45,4.5,98,USA
+8736005,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,NE2F50LBD***,Electric Resistance,Storage,Medium Usage,60,,0.93,48,45,4.5,98,USA
+8736006,Active,WHIRLPOOL,U.S. CRAFTSMASTER,E48LB6-45***,Electric Resistance,Storage,Medium Usage,60,,0.93,48,45,4.5,98,USA
+9755518,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,MHDV62 30T30 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,60,,0.63,30,29,30,77,USA; Canada
+9755516,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6 30 MDV* 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,60,,0.63,30,29,30,77,USA; Canada
+9755517,Active,LOCHINVAR,"LOCHINVAR, LLC",MGN030 30 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,60,,0.63,30,29,30,77,USA; Canada
+9755513,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,FMDV 30 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,60,,0.63,30,29,30,77,USA; Canada
+10203422,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,G6-DMH3030NV 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,60,,0.63,30,29,30,77,USA; Canada
+9755514,Active,STATE,STATE WATER HEATERS,GS6 30 MDV* 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,60,,0.63,30,29,30,77,USA; Canada
+9755515,Active,STATE,STATE WATER HEATERS,SCI 30 MDV* 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,60,,0.63,30,29,30,77,USA; Canada
+10203579,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,MHDV2F3030T 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,60,,0.63,30,29,30,77,USA; Canada
+9755525,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,MHDV62 40T32 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,57,,0.62,40,39,32,77,USA; Canada
+9755523,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6 40 MDV* 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,57,,0.62,40,39,32,77,USA; Canada
+9755524,Active,LOCHINVAR,"LOCHINVAR, LLC",MGN040 32 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,57,,0.62,40,39,32,77,USA; Canada
+9755520,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,FMDV 40 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,57,,0.62,40,39,32,77,USA; Canada
+10203580,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,G6-DMH4032NV 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,57,,0.62,40,39,32,77,USA; Canada
+9755521,Active,STATE,STATE WATER HEATERS,GS6 40 MDV* 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,57,,0.62,40,39,32,77,USA; Canada
+9755522,Active,STATE,STATE WATER HEATERS,SCI 40 MDV* 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,57,,0.62,40,39,32,77,USA; Canada
+10203581,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,MHDV2F4032T 250,Both Natural Gas and Propane Gas,Storage,Medium Usage,57,,0.62,40,39,32,77,USA; Canada
+10055344,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,"E(6,10)N-50L***",Electric Resistance,Storage,Medium Usage,54,,0.92,51,48,4.5,98,USA; Canada
+10055345,Active,LOCHINVAR,"LOCHINVAR, LLC",KSA050KD,Electric Resistance,Storage,Medium Usage,54,,0.92,51,48,4.5,98,USA; Canada
+10055346,Active,RELIANCE,RELIANCE WATER HEATER COMPANY,6-50-EOLS***,Electric Resistance,Storage,Medium Usage,54,,0.92,51,48,4.5,98,USA; Canada
+10055342,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,"(E,P)NL-50",Electric Resistance,Storage,Medium Usage,54,,0.92,51,48,4.5,98,USA; Canada
+10205590,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,E6-50L45DV****,Electric Resistance,Storage,Medium Usage,54,,0.92,51,48,4.5,98,USA; Canada
+10055343,Active,STATE,STATE WATER HEATERS,"E(N,S)(6,X)-50-DOLS***",Electric Resistance,Storage,Medium Usage,54,,0.92,51,48,4.5,98,USA; Canada
+10055347,Active,U.S. CRAFTSMASTER,U.S. CRAFTSMASTER,NE2F50LD***,Electric Resistance,Storage,Medium Usage,54,,0.92,51,48,4.5,98,USA; Canada
+9854413,Active,AMERICAN,AMERICAN WATER HEATER COMPANY,"E(6,10)N-36L***",Electric Resistance,Storage,Medium Usage,51,,0.92,36,33,4.5,98,Outside USA & Canada
+9854411,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,"(E,P)NL-36",Electric Resistance,Storage,Medium Usage,51,,0.92,36,33,4.5,98,Outside USA & Canada
+10205575,Active,A.O. SMITH,A.O. SMITH WATER PRODUCTS CO.,E6-36L45DV****,Electric Resistance,Storage,Medium Usage,51,,0.92,36,33,4.5,98,Outside USA & Canada
+9854414,Active,LOCHINVAR,"LOCHINVAR, LLC",KSA036KD,Electric Resistance,Storage,Medium Usage,51,,0.92,36,33,4.5,98,Outside USA & Canada
+9854412,Active,STATE,STATE WATER HEATERS,"E(N,S)(6,X)-36-DOLS***",Electric Resistance,Storage,Medium Usage,51,,0.92,36,33,4.5,98,Outside USA & Canada
+10082521,Active,RHEEM,"RHEEM SALES COMPANY, INC.",PROG29-30U RH63 EC1,Natural Gas,Storage,Medium Usage,51,,0.6,29,28,30,77,USA
+10082522,Active,RHEEM,"RHEEM SALES COMPANY, INC.",24X30FN1,Natural Gas,Storage,Medium Usage,51,,0.6,29,28,30,77,USA
+10082523,Active,RHEEM,"RHEEM SALES COMPANY, INC.",PRO+G29-30U RH63 EC1,Natural Gas,Storage,Medium Usage,51,,0.6,29,28,30,77,USA
+10082524,Active,RHEEM,"RHEEM SALES COMPANY, INC.",XG29T06EN30U0,Natural Gas,Storage,Medium Usage,51,,0.6,29,28,30,77,USA
+10082525,Active,RICHMOND,"RHEEM SALES COMPANY, INC.",6G30-30FN4,Natural Gas,Storage,Medium Usage,51,,0.6,29,28,30,77,USA
+10082526,Active,RUUD,"RHEEM SALES COMPANY, INC.",M4-30FN1,Natural Gas,Storage,Medium Usage,51,,0.6,29,28,30,77,USA
+10082527,Active,RUUD,"RHEEM SALES COMPANY, INC.",PRO+G29-30U RU63 EC1,Natural Gas,Storage,Medium Usage,51,,0.6,29,28,30,77,USA
+10082528,Active,RUUD,"RHEEM SALES COMPANY, INC.",PROG29-30U RU63 EC1,Natural Gas,Storage,Medium Usage,51,,0.6,29,28,30,77,USA
+9950962,Active,BRADFORD WHITE,BRADFORD WHITE CORP.,RE240LN*-*****,Electric Resistance,Storage,Low Usage,45,,0.92,37,34,4.5,98,USA; Canada
+10197152,Active,BRADFORD WHITE,BRADFORD WHITE CORP.,RE130L*-*****,Electric Resistance,Storage,Low Usage,42,,0.92,28,26,4.5,98,USA; Canada; Outside USA & Canada
+9950961,Active,BRADFORD WHITE,BRADFORD WHITE CORP.,RE230LN*-*****,Electric Resistance,Storage,Low Usage,41,,0.92,28,26,4.5,98,USA; Canada

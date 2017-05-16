@@ -1,9 +1,7 @@
 fn_script = "AHRI_tankless.R"
 # explore RE vs new tankless algorithms 
-# "Mon May 15 11:52:26 2017"
-# "Mon May 15 16:40:25 2017"  fix RE.Max
-# "Mon May 15 18:54:52 2017"  matrix solution to Fadj & Lcyc_gas
-# "Tue May 16 06:05:15 2017"  1st pass at matrix solution
+# solve for input during recovery effiency test (Pgas.RE) and cyclic losses (Lcyc)
+# "Tue May 16 14:31:04 2017"  refactor 
 
 
 # clean up leftovers before starting
@@ -31,7 +29,7 @@ if(!require(ggplot2)){install.packages("ggplot2")}
 library(ggplot2)
 
 # read data from AHRI temporary online directory
-fn_tankless_data = "/home/jiml/HotWaterResearch/projects/CECHWT24/2016 CBECC UEF/AHRI Directory/AHRI_directory.csv"
+fn_tankless_data = "AHRI_directory.csv"
 DT_whs <- data.table(read.csv(file=fn_tankless_data,  comment.char = "#"))
 
 # see what we've got
@@ -83,7 +81,7 @@ summary(DT_tankless[,list(Usage.Bin,MaxGPM,UEF,Rated.Input,RE)])
 # Looks OK. 
 
 # read UEF test procedure draw patterns
-fn_UEF_draw_pattern = "/home/jiml/HotWaterResearch/projects/CECHWT24/2016 CBECC UEF/UEF draw patterns.csv"
+fn_UEF_draw_pattern = "UEF draw patterns.csv"
 DT_UEF_DP <- data.table(read.csv(file=fn_UEF_draw_pattern,  comment.char = "#"))
 
 DT_UEF_DP # seems OK
@@ -98,39 +96,21 @@ Tdelta =	125 - 58	# °F
 DT_UEF_DP[,Duration:=Volume/Flow]  # in minutes
 DT_UEF_DP[,Qout:=Volume*Tdelta*Cp] # BTU
 
-# calculate RE.Max at MaxGPM for all the water heaters as Qout / Qin
-DT_tankless[,RE.Max := (MaxGPM * 60 * Cp * Tdelta)/Rated.Input ]
-
-# compare RE.Max to RE
-qplot(data=DT_tankless, x=RE, y=RE.Max)
-
-# look at ranges of RE.Max
-summary(DT_tankless[,list(RE,RE.Max)])
-    #        RE             RE.Max      
-    # Min.   :0.8200   Min.   :0.7037  
-    # 1st Qu.:0.8400   1st Qu.:0.8092  
-    # Median :0.8500   Median :0.8264  
-    # Mean   :0.8831   Mean   :0.8514  
-    # 3rd Qu.:0.9500   3rd Qu.:0.8877  
-    # Max.   :1.0000   Max.   :0.9814  
-# Seems OK
-
 # make a data.table that's just the first draw data from UEF draw pattern for the RE calcs
 DT_RE <- DT_UEF_DP[Draw==1,list(Usage.Bin, 
-                                Flow.RE=Flow, 
-                                Volume.RE=Volume,
-                                Qout.RE=Qout, 
-                                Duration.RE=Duration,
-                                N.RE=1)
+                                Flow.RE     = Flow, 
+                                Qout.RE     = Qout, 
+                                Duration.RE = Duration,
+                                N.RE        =1)
                    ]
 setkey(DT_RE,Usage.Bin)
 
 # make a data.table thats draw data for the entire UEF test procedure for UEF calcs
-DT_UEF <- DT_UEF_DP[,list(Volume.UEF    = sum(Volume),
-                          Duration.UEF  = sum(Duration),
+DT_UEF <- DT_UEF_DP[,list(Duration.UEF  = sum(Duration),
+                          Volume.UEF    = sum(Volume),
                           Qout.UEF      = sum(Qout),
-                          N.UEF = length(Qout)
-                          ), by = Usage.Bin]
+                          N.UEF         = length(Qout)), 
+                    by = Usage.Bin]
 DT_UEF[,Flow.UEF:=Volume.UEF / Duration.UEF]
 setkey(DT_UEF,Usage.Bin)
 
@@ -139,149 +119,77 @@ setkey(DT_tankless,Usage.Bin)
 DT_tankless <- merge(DT_tankless, DT_RE)
 DT_tankless <- merge(DT_tankless, DT_UEF)
 
+# add Qin
+DT_tankless[,Qin.RE:=Qout.RE/RE]
+DT_tankless[,Qin.UEF:=Qout.UEF/UEF]
+
 #check that it worked
 summary(DT_tankless)
 # OK
 
-# calculate the turndown ratio at RE test procedure flowrates
-DT_tankless[,TD.RE:=Flow.RE/MaxGPM]
-# and average turndown for UEF test procedure
-DT_tankless[,TD.UEF:=Flow.UEF/MaxGPM]
+str(DT_tankless)
 
-# try matrix solution 
+# try matrix solution for
+# Qin.RE = Pgas.RE * Duration.RE + N.RE * Lcyc
+# Qin.UEF = Pgas.RE * (Flow.UEF/Flow.RE) * Duration.UEF + N.UEF * Lcyc
+
 # make simple variables first for the nth WH
 n=1
 DT_tankless[n,]
-Rated.Input.n    = DT_tankless[n,Rated.Input] 
-TD.UEF.n         = DT_tankless[n,TD.UEF]
+
+Duration.RE.n    = DT_tankless[n,Duration.RE]  
+Flow.RE.n        = DT_tankless[n,Flow.RE]
+N.RE.n           = DT_tankless[n,N.RE]  
+Qin.RE.n         = DT_tankless[n,Qin.RE]
+
+Flow.UEF.n       = DT_tankless[n,Flow.UEF]
 Duration.UEF.n   = DT_tankless[n,Duration.UEF]
 N.UEF.n          = DT_tankless[n,N.UEF]
-Qout.UEF.n       = DT_tankless[n,Qout.UEF]
-
-TD.RE.n          = DT_tankless[n,TD.RE]  
-Duration.RE.n    = DT_tankless[n,Duration.RE]  
-N.RE.n           = DT_tankless[n,N.RE]  
-Qout.RE.n        = DT_tankless[n,Qout.RE]
+Qin.UEF.n        = DT_tankless[n,Qin.UEF]
 
 # find solutions to:
-# A[1,1] * Fadj + A[1,2] * Lcyc_gas = Qout.UEF
-# A[2,1] * Fadj + A[2,2] * Lcyc_gas = Qout.RE
+# A[1,1] * Pgas.RE + A[1,2] * Lcyc_gas = Qin.RE
+# A[2,1] * Pgas.RE + A[2,2] * Lcyc_gas = Qin.UEF
 
 # Matrix A, the coeficients of Fadj & Lcyc_gas
 A <- matrix(nrow=2,ncol=2)
-A[1,1] <- Rated.Input.n * TD.UEF.n * Duration.UEF.n
-A[1,2] <- N.UEF.n
-A[2,1] <- Rated.Input.n * TD.RE.n * Duration.RE.n
-A[2,2] <- N.RE.n
+A[1,1] <- Duration.RE.n
+A[1,2] <- N.RE.n
+A[2,1] <- (Flow.UEF.n/Flow.RE.n)* Duration.UEF.n
+A[2,2] <- N.UEF.n
 A
 
 # Matrix B, the constants
 b <- matrix(nrow=2)
-b[1] <- Qout.UEF.n
-b[2] <- Qout.RE.n
+b[1] <- Qin.RE.n
+b[2] <- Qin.UEF.n
 b
 
 X <- solve(A,b)
 X
-    #              [,1]
-    # [1,] 1.616453e-02
-    # [2,] 9.635467e-13
-# X[2,] too small 
+      #            [,1]
+      # [1,] 1693.42550
+      # [2,]   93.21608
 
-Fadj.n <- X[1,]
-Lcyc_gas.n <- X[2,]
-
-# check answer
-A[1,1] * Fadj.n + A[1,2] * Lcyc_gas.n
-Qout.UEF.n
-identical(A[1,1] * Fadj.n + A[1,2] * Lcyc_gas.n, Qout.UEF.n)
-#  TRUE
-
-A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n
-Qout.RE.n
-identical(A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n, Qout.RE.n)
-# FALSE
-(A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n) - Qout.RE.n
-# -1.818989e-12, 
-# not a stable solution? error is larger than Fadj?
-
-##
-
-# Try again with a more standard WH?
-names(DT_tankless)
-DT_tankless[Model.Number=="ATI-110U 200",]
-
-Rated.Input.n    = DT_tankless[Model.Number=="ATI-110U 200",Rated.Input] 
-TD.UEF.n         = DT_tankless[Model.Number=="ATI-110U 200",TD.UEF]
-Duration.UEF.n   = DT_tankless[Model.Number=="ATI-110U 200",Duration.UEF]
-N.UEF.n          = DT_tankless[Model.Number=="ATI-110U 200",N.UEF]
-Qout.UEF.n       = DT_tankless[Model.Number=="ATI-110U 200",Qout.UEF]
-
-TD.RE.n          = DT_tankless[Model.Number=="ATI-110U 200",TD.RE]  
-Duration.RE.n    = DT_tankless[Model.Number=="ATI-110U 200",Duration.RE]  
-N.RE.n           = DT_tankless[Model.Number=="ATI-110U 200",N.RE]  
-Qout.RE.n        = DT_tankless[Model.Number=="ATI-110U 200",Qout.RE]
-
-# find solutions to:
-# A[1,1] * Fadj + A[1,2] * Lcyc_gas = Qout.UEF
-# A[2,1] * Fadj + A[2,2] * Lcyc_gas = Qout.RE
-
-# Matrix A, the coeficients of Fadj & Lcyc_gas
-A <- matrix(nrow=2,ncol=2)
-A[1,1] <- Rated.Input.n * TD.UEF.n * Duration.UEF.n
-A[1,2] <- N.UEF.n
-A[2,1] <- Rated.Input.n * TD.RE.n * Duration.RE.n
-A[2,2] <- N.RE.n
-A
-
-# Matrix B, the constants
-b <- matrix(nrow=2)
-b[1] <- Qout.UEF.n
-b[2] <- Qout.RE.n
-b
-
-X <- solve(A,b)
-X
-#              [,1]
-# [1,] 1.616453e-02
-# [2,] 9.635467e-13
-# X[2,] too small 
-
-Fadj.n <- X[1,]
-Lcyc_gas.n <- X[2,]
+Pgas.RE.n  <- X[1,]  # BTU/min
+Lcyc_gas.n <- X[2,]  # BTU/cycle
 
 # check answer
-A[1,1] * Fadj.n + A[1,2] * Lcyc_gas.n
-Qout.UEF.n
-identical(A[1,1] * Fadj.n + A[1,2] * Lcyc_gas.n, Qout.UEF.n)
+A[1,1] * Pgas.RE.n + A[1,2] * Lcyc_gas.n
+Qin.RE.n
+identical(A[1,1] * Pgas.RE.n + A[1,2] * Lcyc_gas.n, Qin.RE.n)
+#  FALSE
+A[1,1] * Pgas.RE.n + A[1,2] * Lcyc_gas.n - Qin.RE.n
+#   1.818989e-12
+
+A[2,1] * Pgas.RE.n + A[2,2] * Lcyc_gas.n
+Qin.UEF.n
+identical(A[2,1] * Pgas.RE.n + A[2,2] * Lcyc_gas.n, Qin.UEF.n)
 #  TRUE
 
-A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n
-Qout.RE.n
-identical(A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n, Qout.RE.n)
-# FALSE
-(A[2,1] * Fadj.n + A[2,2] * Lcyc_gas.n) - Qout.RE.n
-# -1.818989e-12, 
-# not a stable solution? error is larger than Fadj?
 
 
 
-####
-
-
-
-
-
-
-
-# fit a model
-mod <-lm( Energy.Factor ~ Recovery.Efficiency ,data=DT_tankless)
-summary(mod)$adj.r.squared
-mod$coefficients
-mod$coefficients[[1]] # Intercept
-mod$coefficients[[2]] # RE coefficient
-mod$adj.r.squared
-nrow(DT_tankless)
 
 eqn_label <- sprintf("EF = RE * %5.4f + %6.5f, r2=%5.4f n=%d",
                             mod$coefficients[[2]],
