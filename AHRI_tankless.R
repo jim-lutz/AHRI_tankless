@@ -6,6 +6,7 @@ fn_script = "AHRI_tankless.R"
 # "Tue May 16 06:05:15 2017"  1st pass at matrix solution, failed
 # "Tue May 16 11:25:51 2017"  go back to for Lcyc.RE and Lcyc.UEF
 #                             Negative RE cyclic losses and Lcyc.UEF < Lcyc.RE?
+#                             see if pieces of Lcyc calcs make sense
 
 
 # clean up leftovers before starting
@@ -158,5 +159,16 @@ summary(DT_tankless[,Lcyc.UEF]) # Negative RE cyclic losses??!!
 qplot(data = DT_tankless, x=Lcyc.RE, y=Lcyc.UEF)
 # Sign wrong somewhere? Lcyc.UEF < Lcyc.RE?
 
+# calculate Qin
+DT_tankless[,Qin.RE:=Qout.RE/RE]
+DT_tankless[,Qin.UEF:=Qout.UEF/UEF]
+summary(DT_tankless[,list(Qin.RE,Qout.RE,Qin.UEF,Qout.UEF)])
+# Qin > Qout, OK
+
+# calculate Lcyc using both RE & UEF
+DT_tankless[,Lcyc:=(Qout.RE/RE + Qout.UEF/UEF) - (Rated.Input/(60*MaxGPM))*(Volume.RE+Volume.UEF)]
+summary(DT_tankless[,Lcyc])
+
 ggsave("tanklessEF.png")
+
 
