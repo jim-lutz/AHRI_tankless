@@ -1,7 +1,7 @@
 fn_script = "AHRI_tankless.R"
 # explore RE vs new tankless algorithms 
-# solve for input during recovery effiency test (Pgas.RE) and cyclic losses (Lcyc)
-# "Tue May 16 14:31:04 2017"  refactor 
+# solve for input during recovery effiency test (Pgas.RE, in BTU/m) and cyclic losses (Lcyc, BTU)
+# "Tue May 16 14:52:48 2017"  now loop through all the tankless WHs
 
 
 # clean up leftovers before starting
@@ -111,7 +111,7 @@ DT_UEF <- DT_UEF_DP[,list(Duration.UEF  = sum(Duration),
                           Qout.UEF      = sum(Qout),
                           N.UEF         = length(Qout)), 
                     by = Usage.Bin]
-DT_UEF[,Flow.UEF:=Volume.UEF / Duration.UEF]
+DT_UEF[,Flow.UEF:=Volume.UEF / Duration.UEF] # average flow rate during UEF test when flowing
 setkey(DT_UEF,Usage.Bin)
 
 # add RE and UEF data to the tankless WH data.table
@@ -129,66 +129,105 @@ summary(DT_tankless)
 
 str(DT_tankless)
 
-# try matrix solution for
-# Qin.RE = Pgas.RE * Duration.RE + N.RE * Lcyc
-# Qin.UEF = Pgas.RE * (Flow.UEF/Flow.RE) * Duration.UEF + N.UEF * Lcyc
+cyclic_losses <- function(n,DT=DT_tankless) {
+  # function to calculate 
+  # input during recovery effiency test (Pgas.RE, in BTU/m) and 
+  # cyclic losses (Lcyc, BTU)
+  # for WH in row n of DT_tankless
+  # returns a list of Pgas.RE and Lcyc
+  
+  # matrix solution for
+  # Qin.RE = Pgas.RE * Duration.RE + N.RE * Lcyc
+  # Qin.UEF = Pgas.RE * (Flow.UEF/Flow.RE) * Duration.UEF + N.UEF * Lcyc
+  
+  # make simple variables first for the nth WH
+  DT_tankless[n,]
+  
+  Duration.RE.n    = DT_tankless[n,Duration.RE]  
+  Flow.RE.n        = DT_tankless[n,Flow.RE]
+  N.RE.n           = DT_tankless[n,N.RE]  
+  Qin.RE.n         = DT_tankless[n,Qin.RE]
+  
+  Flow.UEF.n       = DT_tankless[n,Flow.UEF]
+  Duration.UEF.n   = DT_tankless[n,Duration.UEF]
+  N.UEF.n          = DT_tankless[n,N.UEF]
+  Qin.UEF.n        = DT_tankless[n,Qin.UEF]
+  
+  # find solutions to:
+  # A[1,1] * Pgas.RE + A[1,2] * Lcyc_gas = Qin.RE
+  # A[2,1] * Pgas.RE + A[2,2] * Lcyc_gas = Qin.UEF
+  
+  # Matrix A, the coeficients of Fadj & Lcyc_gas
+  A <- matrix(nrow=2,ncol=2)
+  A[1,1] <- Duration.RE.n
+  A[1,2] <- N.RE.n
+  A[2,1] <- (Flow.UEF.n/Flow.RE.n)* Duration.UEF.n
+  A[2,2] <- N.UEF.n
+  A
+  
+  # Matrix B, the constants
+  b <- matrix(nrow=2)
+  b[1] <- Qin.RE.n
+  b[2] <- Qin.UEF.n
+  b
+  
+  X <- solve(A,b)
+  X
+        #            [,1]
+        # [1,] 1693.42550
+        # [2,]   93.21608
+  
+  Pgas.RE.n  <- X[1,]  # BTU/min
+  Lcyc_gas.n <- X[2,]  # BTU/cycle
+  
+  # check answer
+  A[1,1] * Pgas.RE.n + A[1,2] * Lcyc_gas.n
+  Qin.RE.n
+  identical(A[1,1] * Pgas.RE.n + A[1,2] * Lcyc_gas.n, Qin.RE.n)
+  #  FALSE
+  A[1,1] * Pgas.RE.n + A[1,2] * Lcyc_gas.n - Qin.RE.n
+  #   1.818989e-12
+  
+  A[2,1] * Pgas.RE.n + A[2,2] * Lcyc_gas.n
+  Qin.UEF.n
+  identical(A[2,1] * Pgas.RE.n + A[2,2] * Lcyc_gas.n, Qin.UEF.n)
+  #  TRUE
+  
+  # return results
+  result <- list(Pgas.RE=Pgas.RE.n, Lcyc_gas=Lcyc_gas.n)
+  return(result)
+  
+}
 
-# make simple variables first for the nth WH
+# pick a trial row number
 n=1
-DT_tankless[n,]
 
-Duration.RE.n    = DT_tankless[n,Duration.RE]  
-Flow.RE.n        = DT_tankless[n,Flow.RE]
-N.RE.n           = DT_tankless[n,N.RE]  
-Qin.RE.n         = DT_tankless[n,Qin.RE]
+# test function
+cyclic_losses(n)
 
-Flow.UEF.n       = DT_tankless[n,Flow.UEF]
-Duration.UEF.n   = DT_tankless[n,Duration.UEF]
-N.UEF.n          = DT_tankless[n,N.UEF]
-Qin.UEF.n        = DT_tankless[n,Qin.UEF]
+# give up and do this with a loop
+for (n in 1:nrow(DT_tankless)) {
+  DT_tankless[n,list(Model.Number)] # report model number
+  
+  # calculate the cyclic losses
+  X<-cyclic_losses(n)
+  
+  # add the results to the data.table
+  DT_tankless[n,Pgas.RE:=X$Pgas.RE]
+  DT_tankless[n,Lcyc_gas:=X$Lcyc_gas]
+  
+}
 
-# find solutions to:
-# A[1,1] * Pgas.RE + A[1,2] * Lcyc_gas = Qin.RE
-# A[2,1] * Pgas.RE + A[2,2] * Lcyc_gas = Qin.UEF
+DT_tankless
+summary(DT_tankless[,list(Pgas.RE,Lcyc_gas)])
 
-# Matrix A, the coeficients of Fadj & Lcyc_gas
-A <- matrix(nrow=2,ncol=2)
-A[1,1] <- Duration.RE.n
-A[1,2] <- N.RE.n
-A[2,1] <- (Flow.UEF.n/Flow.RE.n)* Duration.UEF.n
-A[2,2] <- N.UEF.n
-A
-
-# Matrix B, the constants
-b <- matrix(nrow=2)
-b[1] <- Qin.RE.n
-b[2] <- Qin.UEF.n
-b
-
-X <- solve(A,b)
-X
-      #            [,1]
-      # [1,] 1693.42550
-      # [2,]   93.21608
-
-Pgas.RE.n  <- X[1,]  # BTU/min
-Lcyc_gas.n <- X[2,]  # BTU/cycle
-
-# check answer
-A[1,1] * Pgas.RE.n + A[1,2] * Lcyc_gas.n
-Qin.RE.n
-identical(A[1,1] * Pgas.RE.n + A[1,2] * Lcyc_gas.n, Qin.RE.n)
-#  FALSE
-A[1,1] * Pgas.RE.n + A[1,2] * Lcyc_gas.n - Qin.RE.n
-#   1.818989e-12
-
-A[2,1] * Pgas.RE.n + A[2,2] * Lcyc_gas.n
-Qin.UEF.n
-identical(A[2,1] * Pgas.RE.n + A[2,2] * Lcyc_gas.n, Qin.UEF.n)
-#  TRUE
+# check by calculating RE and UEF based on draw patterns
+DT_tankless[, Qin.RE.check := Pgas.RE * Duration.RE + Lcyc_gas]
+DT_tankless[, Qin.UEF.check := Pgas.RE * (Flow.UEF/Flow.RE) * Duration.UEF + N.UEF * Lcyc_gas]
 
 
-
+qplot(data = DT_tankless, x=Qin.RE, y=Qin.RE.check)
+qplot(data = DT_tankless, x=Qin.UEF, y=Qin.UEF.check)
 
 
 eqn_label <- sprintf("EF = RE * %5.4f + %6.5f, r2=%5.4f n=%d",
@@ -199,7 +238,6 @@ eqn_label <- sprintf("EF = RE * %5.4f + %6.5f, r2=%5.4f n=%d",
 # plot model on chart
 ggplot(data=DT_tankless,  aes(Recovery.Efficiency,  Energy.Factor)) +
   geom_point() +
-  geom_smooth(method ="lm") + geom_text(x=.90, y=.80,label=eqn_label)
 
 ggsave("tanklessEF.png")
 
